@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -10,7 +10,7 @@ import './style.css';
 
 export default function App() {
   return (
-    <>
+    <React.Fragment>
       <Navbar />
       <Container>
         <Routes>
@@ -19,6 +19,7 @@ export default function App() {
           <Route path="/store" element={<Store />} />
         </Routes>
       </Container>
-    </>
+      <Outlet />
+    </React.Fragment>
   );
 }
