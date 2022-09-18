@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Container } from 'react-bootstrap';
 import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import About from './pages/About';
 import Home from './pages/Home';
 import Store from './pages/Store';
@@ -10,7 +11,7 @@ import './style.css';
 
 export default function App() {
   return (
-    <React.Fragment>
+    <ShoppingCartProvider>
       <Navbar />
       <Container>
         <Routes>
@@ -20,6 +21,6 @@ export default function App() {
         </Routes>
       </Container>
       <Outlet />
-    </React.Fragment>
+    </ShoppingCartProvider>
   );
 }
