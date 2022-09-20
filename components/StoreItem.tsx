@@ -15,7 +15,7 @@ export default function ({ id, name, price, imgUrl }: StoreItemProps) {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
-    removeCartQuantity,
+    removeFromCart,
   } = useShoppingCart();
   const quantity = getItemQuantity(id);
   return (
@@ -54,7 +54,7 @@ export default function ({ id, name, price, imgUrl }: StoreItemProps) {
               <Button
                 variant="danger"
                 size="sm"
-                onClick={() => removeCartQuantity(id)}
+                onClick={() => removeFromCart(id)}
               >
                 remove
               </Button>
